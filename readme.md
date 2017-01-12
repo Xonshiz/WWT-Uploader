@@ -36,6 +36,8 @@ Currently, the script supports these arguments :
 
 ## How To Use :
 
+If you're using the python script, then go to the directory of this script and run `pip install -r requirements.txt`.
+
 ### Part 1:
 The script makes a `settings.ini` file and stores the information in that. So, to generate that, you need to run the script with `--setup` function.
 

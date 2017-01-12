@@ -1,3 +1,7 @@
+from __future__ import print_function
+from builtins import str
+from builtins import input
+from builtins import object
 import configparser
 import argparse
 import glob
@@ -13,7 +17,7 @@ class wwt_Uploader(object):
         self.main()
 
     def version(self):
-        return "2017.01.12"
+        print("2017.01.12")
 
     def main(self):
 
@@ -36,7 +40,7 @@ class wwt_Uploader(object):
             config = configparser.ConfigParser()
             config['MainSettings'] = {}
 
-            hKey = str(raw_input("Enter You API Key : ")).strip()
+            hKey = str(input("Enter You API Key : ")).strip()
 
             config['MainSettings']['hKey'] = '%s' % hKey
 
@@ -47,7 +51,7 @@ class wwt_Uploader(object):
                 exit(
                     "I could not find Description.txt file. If it's not there, please make it and paste your desired description in it.")
 
-            category = str(input("Enter the torrent Category (run with --id to see id list) : ")).strip()
+            category = str(eval(input("Enter the torrent Category (run with --id to see id list) : "))).strip()
 
             config['MainSettings']['description'] = '%s' % description
 
@@ -111,5 +115,5 @@ class wwt_Uploader(object):
                   '124': 'Movies-->Biography', '125': 'Movies-->Mystery/Thriller', '126': 'Movies-->War',
                   '127': 'Games-->Table Top', '128': 'Movies-->Dual Audio', '129': 'Movies-->Adventure',
                   '130': 'Movies-->DVD Screener', '132': 'Comics-->Nem43 Comics', }
-        for x in idList.keys():
+        for x in list(idList.keys()):
             print('{:^80}'.format("%s ==> %s") % (x, idList[x]))
