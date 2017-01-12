@@ -13,10 +13,10 @@ You will need curl.exe for this to work. Just clone this repository and you'll g
 
 ## Table of Content
 
-* [List of Arguments](#list-of-arguments)
 * [Things to do First](#things-to-do-first)
+* [List of Arguments](#list-of-arguments)
 
-Check the [Release Section]() for windows binary. As usual, it's a 32 bit binary and hence, it should run on both x64 and x86 systems.
+Check the [Release Section](https://github.com/Xonshiz/WWT-Uploader/releases) for windows binary. As usual, it's a 32 bit binary and hence, it should run on both x64 and x86 systems.
 
 ## Things to do First
 First, sign up on [WWT](https://worldwidetorrents.eu/account-login-signup.php) and register yourself for an api [by going here](http://worldwidetorrents.eu/api/).
