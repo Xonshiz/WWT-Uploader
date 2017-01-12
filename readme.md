@@ -15,6 +15,7 @@ You will need curl.exe for this to work. Just clone this repository and you'll g
 
 * [Things to do First](#things-to-do-first)
 * [List of Arguments](#list-of-arguments)
+* [Notes](#notes)
 
 Check the [Release Section](https://github.com/Xonshiz/WWT-Uploader/releases) for windows binary. As usual, it's a 32 bit binary and hence, it should run on both x64 and x86 systems.
 
@@ -61,3 +62,7 @@ Now, after generating a settings.ini file, you're ready to use this script. Just
 Now, the script will begin uploading the torrent to WWT and would show the message on the command prompt/shell.
 
 You don't have to follow part 1 everytime. You can just go to part 2 if you don't have to make major changes to description or category id.
+
+## Notes
+1.) You need to run his script in a shell or a command prompt.
+2.) Please don't install this in locations where you need admin access to do anything. For example, don't install it in `C://`, `C://windows`, `Program Files` etc. You can just install it on a folder on desktop or elsewhere.
