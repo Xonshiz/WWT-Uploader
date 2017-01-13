@@ -65,4 +65,5 @@ You don't have to follow part 1 everytime. You can just go to part 2 if you don'
 
 ## Notes
 1.) You need to run his script in a shell or a command prompt.
+
 2.) Please don't install this in locations where you need admin access to do anything. For example, don't install it in `C://`, `C://windows`, `Program Files` etc. You can just install it on a folder on desktop or elsewhere.
