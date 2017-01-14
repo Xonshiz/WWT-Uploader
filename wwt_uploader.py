@@ -22,9 +22,9 @@ class wwt_Uploader(object):
     def main(self):
 
         parser = argparse.ArgumentParser(
-            description='WWT Uploader can upload all your torrents to WWT via API.You can automate this script easily.')
-        parser.add_argument('--version', action='store_true', help='Shows version and exits.')
-        parser.add_argument('--id', action='store_true', help='Shows version and exits.')
+            description='WWT Uploader can upload all your torrents to WWT via API. You can automate this script easily.')
+        parser.add_argument('--version', action='store_true', help='Shows current version and exits.')
+        parser.add_argument('--id', action='store_true', help='Lists the categories and their IDs.')
         parser.add_argument('--setup', action='store_true', help='Starts a setup for making an INI file.')
 
         args = parser.parse_args()
@@ -40,7 +40,7 @@ class wwt_Uploader(object):
             config = configparser.ConfigParser()
             config['MainSettings'] = {}
 
-            hKey = str(input("Enter You API Key : ")).strip()
+            hKey = str(input("Enter your API Key : ")).strip()
 
             config['MainSettings']['hKey'] = '%s' % hKey
 
@@ -49,7 +49,7 @@ class wwt_Uploader(object):
                     description = desc.read()
             except:
                 exit(
-                    "I could not find Description.txt file. If it's not there, please make it and paste your desired description in it.")
+                    "Unable to find 'Description.txt' file. If it's not there, please make it and paste your desired description in it.")
 
             category = str(eval(input("Enter the torrent Category (run with --id to see id list) : "))).strip()
 
@@ -60,7 +60,7 @@ class wwt_Uploader(object):
             with open('Settings.ini', 'w') as configfile:
                 config.write(configfile)
 
-            print("There should be a settings.ini file in the folder now. Please don't delete it.")
+            print("There should be a Settings.ini file in the folder now. Please don't delete it.")
             exit()
 
         config = configparser.ConfigParser(allow_no_value=True)
@@ -74,7 +74,7 @@ class wwt_Uploader(object):
 
         for filename in glob.glob('*.torrent'):
             torrentName = str(filename).replace(".torrent", "")
-            uploadCommand = 'curl -i -X POST -H "X-Authorization: %s" -H "Content-Type: multipart/form-data" -F "torrent_file=@%s" -F "name=%s" -F "category_id=%s" -F "description=%s" http://worldwidetorrents.eu/api/account/upload/' % (
+            uploadCommand = 'curl -i -X POST -H "X-Authorization: %s" -H "Content-Type: multipart/form-data" -F "torrent_file=@%s" -F "name=%s" -F "category_id=%s" -F "description=%s" https://worldwidetorrents.eu/api/account/upload/' % (
                 api_key, filename, torrentName, category, description)
             # print(uploadCommand)
             call(uploadCommand)
