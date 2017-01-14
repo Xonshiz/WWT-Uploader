@@ -20,18 +20,18 @@ You will need curl.exe for this to work. Just clone this repository and you'll g
 Check the [Release Section](https://github.com/Xonshiz/WWT-Uploader/releases) for windows binary. As usual, it's a 32 bit binary and hence, it should run on both x64 and x86 systems.
 
 ## Things to do First
-First, sign up on [WWT](https://worldwidetorrents.eu/account-login-signup.php) and register yourself for an api [by going here](http://worldwidetorrents.eu/api/).
+First, sign up on [WWT](https://worldwidetorrents.eu/account-login-signup.php) and register yourself for an api [by going here](https://worldwidetorrents.eu/api/).
 
-After WWT staff validates you API request, you'll receive an API KEY on [this page](http://worldwidetorrents.eu/api/). Keep in mind that this is very important and this key should be treated like your password. Anyone with your key can upload torrents from your account.
+After WWT staff validates you API request, you'll receive an API KEY on [this page](https://worldwidetorrents.eu/api/). Keep in mind that this is very important and this key should be treated like your password. Anyone with your key can upload torrents from your account.
 
-Then, you need to know torrent category id, which you can [see on their category list page](http://worldwidetorrents.eu/catlist.php).We need the numerical value for the category id. or you can pass the `--id` argument to this script and see the list.
+Then, you need to know torrent category id, which you can [see on their category list page](https://worldwidetorrents.eu/catlist.php).We need the numerical value for the category id. or you can pass the `--id` argument to this script and see the list.
 
 ## List of Arguments
 Currently, the script supports these arguments :
 ```
 -h, --help                          Prints the basic help menu of the script and exits.
 --version                           Shows version and exits.
---id                                Shows version and exits.
+--id                                Lists the categories and their IDs.
 --setup                             Starts a setup for making an INI file.
 ```
 
@@ -40,7 +40,7 @@ Currently, the script supports these arguments :
 If you're using the python script, then go to the directory of this script and run `pip install -r requirements.txt`.
 
 ### Part 1:
-The script makes a `settings.ini` file and stores the information in that. So, to generate that, you need to run the script with `--setup` function.
+The script makes a `Settings.ini` file and stores the information in that. So, to generate that, you need to run the script with `--setup` function.
 
 1.) First, open the "`Description.txt`" file and enter your desired description in it and save the file (save it in the same directory).
 
@@ -50,10 +50,10 @@ The script makes a `settings.ini` file and stores the information in that. So, t
 
 4.) It will now ask for `category id` of the torrent. Enter the id number that you found out before.
 
-If you provided correct information, correctly, then this should generate a settings.ini file. Now, later if you feel the need to change the torrent category id, then you can make change in the settings.ini file directly. But, you need to be very careful while making changes in the description section of settings.ini file. Keep the tab space maintained (it's advised to use --setup when you want to update anything though).
+If you provided correct information, correctly, then this should generate a Settings.ini file. Now, later if you feel the need to change the torrent category id, then you can make change in the Settings.ini file directly. But, you need to be very careful while making changes in the description section of Settings.ini file. Keep the tab space maintained (it's advised to use --setup when you want to update anything though).
 
 ### Part 2:
-Now, after generating a settings.ini file, you're ready to use this script. Just follow these steps now :
+Now, after generating a Settings.ini file, you're ready to use this script. Just follow these steps now :
 
 1.) Copy the .torrent file(s) you want to upload to WWT into the directory of this script.
 
@@ -64,6 +64,6 @@ Now, the script will begin uploading the torrent to WWT and would show the messa
 You don't have to follow part 1 everytime. You can just go to part 2 if you don't have to make major changes to description or category id.
 
 ## Notes
-1.) You need to run his script in a shell or a command prompt.
+1.) You need to run this script in a shell or a command prompt.
 
 2.) Please don't install this in locations where you need admin access to do anything. For example, don't install it in `C://`, `C://windows`, `Program Files` etc. You can just install it on a folder on desktop or elsewhere.
