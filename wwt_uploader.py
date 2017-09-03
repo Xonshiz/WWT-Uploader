@@ -74,7 +74,7 @@ class wwt_Uploader(object):
 
         for filename in glob.glob('*.torrent'):
             torrentName = str(filename).replace(".torrent", "")
-            uploadCommand = 'curl -i -X POST -H "X-Authorization: %s" -H "Content-Type: multipart/form-data" -F "torrent_file=@%s" -F "name=%s" -F "category_id=%s" -F "description=%s" https://worldwidetorrents.eu/api/account/upload/' % (
+            uploadCommand = 'curl -i -X POST -H "X-Authorization: %s" -H "Content-Type: multipart/form-data" -F "torrent_file=@%s" -F "name=%s" -F "category_id=%s" -F "description=%s" https://worldwidetorrents.me/api/account/upload/' % (
                 api_key, filename, torrentName, category, description)
             # print(uploadCommand)
             call(uploadCommand)
